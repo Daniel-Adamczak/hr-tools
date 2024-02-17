@@ -1,6 +1,5 @@
 import React from 'react';
 import { EmployeeRow } from './EmployeeTable/EmployeeRow';
-import { Employee } from '../EmployeeList';
 import styled from 'styled-components';
 
 const Table = styled.table`
@@ -21,11 +20,28 @@ const Td = styled.td`
   border-bottom: 1px solid #ddd;
 `;
 
+interface Employee {
+  id: string;
+  name: string;
+  lastName: string;
+  birthDate: string;
+  street: string;
+  city: string;
+  postalCode: string;
+  salary: number;
+  status: 'Employed' | 'On Leave' | 'Fired';
+  phoneNumber: string;
+}
+
 interface EmployeeTableProps {
   employees: Employee[];
 }
 
 export const EmployeeTable: React.FC<EmployeeTableProps> = ({ employees }) => {
+  const employeesTableContent = employees.map((employee) => (
+    <EmployeeRow key={employee.id} employee={employee} />
+  ));
+
   return (
     <Table>
       <Th>ID</Th>
@@ -33,11 +49,7 @@ export const EmployeeTable: React.FC<EmployeeTableProps> = ({ employees }) => {
       <Th>Nazwisko</Th>
       <Th>Pensja</Th>
       <Th>Status</Th>
-      <tbody>
-        {employees.map((employee) => (
-          <EmployeeRow key={employee.id} employee={employee} />
-        ))}
-      </tbody>
+      <tbody>{employeesTableContent}</tbody>
     </Table>
   );
 };

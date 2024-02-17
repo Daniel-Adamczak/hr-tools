@@ -1,74 +1,364 @@
 {
   "employees": [
-    {
-      "id": "1",
-      "name": "John",
-      "lastName": "Doe",
-      "salary": 50000,
-      "status": "Active"
-    },
-    {
-      "id": "2",
-      "name": "Jane",
-      "lastName": "Doe",
-      "salary": 52000,
-      "status": "Active"
-    },
-    {
-      "id": "3",
-      "name": "Jim",
-      "lastName": "Beam",
-      "salary": 55000,
-      "status": "Inactive"
-    },
-    {
-      "id": "4",
-      "name": "Jack",
-      "lastName": "Daniels",
-      "salary": 53000,
-      "status": "Active"
-    },
-    {
-      "id": "5",
-      "name": "Jose",
-      "lastName": "Cuervo",
-      "salary": 51000,
-      "status": "Active"
-    },
-    {
-      "id": "6",
-      "name": "Jin",
-      "lastName": "Bean",
-      "salary": 54000,
-      "status": "Inactive"
-    },
-    {
-      "id": "7",
-      "name": "Julie",
-      "lastName": "Smith",
-      "salary": 57000,
-      "status": "Active"
-    },
-    {
-      "id": "8",
-      "name": "Jason",
-      "lastName": "Bourne",
-      "salary": 56000,
-      "status": "Active"
-    },
-    {
-      "id": "9",
-      "name": "Jasper",
-      "lastName": "Carrott",
-      "salary": 58000,
-      "status": "Inactive"
-    },
-    {
-      "id": "10",
-      "name": "Jill",
-      "lastName": "Valentine",
-      "salary": 59000,
-      "status": "Active"
-    }
+      {
+          "id": "1",
+          "name": "Name1",
+          "lastName": "Surname1",
+          "birthDate": "1981-02-02",
+          "street": "Street1 1",
+          "city": "Katowice",
+          "postalCode": "40-001",
+          "salary": 4500,
+          "status": "On Leave",
+          "phoneNumber": "101-201-301"
+      },
+      {
+          "id": "2",
+          "name": "Name2",
+          "lastName": "Surname2",
+          "birthDate": "1982-03-03",
+          "street": "Street2 2",
+          "city": "Lublin",
+          "postalCode": "20-001",
+          "salary": 5000,
+          "status": "Fired",
+          "phoneNumber": "102-202-302"
+      },
+      {
+          "id": "3",
+          "name": "Name3",
+          "lastName": "Surname3",
+          "birthDate": "1983-04-04",
+          "street": "Street3 3",
+          "city": "Bydgoszcz",
+          "postalCode": "85-001",
+          "salary": 5500,
+          "status": "Employed",
+          "phoneNumber": "103-203-303"
+      },
+      {
+          "id": "4",
+          "name": "Name4",
+          "lastName": "Surname4",
+          "birthDate": "1984-05-05",
+          "street": "Street4 4",
+          "city": "Szczecin",
+          "postalCode": "70-001",
+          "salary": 6000,
+          "status": "On Leave",
+          "phoneNumber": "104-204-304"
+      },
+      {
+          "id": "5",
+          "name": "Name5",
+          "lastName": "Surname5",
+          "birthDate": "1985-06-06",
+          "street": "Street5 5",
+          "city": "\u0141\u00f3d\u017a",
+          "postalCode": "90-001",
+          "salary": 4000,
+          "status": "Fired",
+          "phoneNumber": "105-205-305"
+      },
+      {
+          "id": "6",
+          "name": "Name6",
+          "lastName": "Surname6",
+          "birthDate": "1986-07-07",
+          "street": "Street6 6",
+          "city": "Pozna\u0144",
+          "postalCode": "60-001",
+          "salary": 4500,
+          "status": "Employed",
+          "phoneNumber": "106-206-306"
+      },
+      {
+          "id": "7",
+          "name": "Name7",
+          "lastName": "Surname7",
+          "birthDate": "1987-08-08",
+          "street": "Street7 7",
+          "city": "Wroc\u0142aw",
+          "postalCode": "50-001",
+          "salary": 5000,
+          "status": "On Leave",
+          "phoneNumber": "107-207-307"
+      },
+      {
+          "id": "8",
+          "name": "Name8",
+          "lastName": "Surname8",
+          "birthDate": "1988-09-09",
+          "street": "Street8 8",
+          "city": "Gda\u0144sk",
+          "postalCode": "80-001",
+          "salary": 5500,
+          "status": "Fired",
+          "phoneNumber": "108-208-308"
+      },
+      {
+          "id": "9",
+          "name": "Name9",
+          "lastName": "Surname9",
+          "birthDate": "1989-10-10",
+          "street": "Street9 9",
+          "city": "Warszawa",
+          "postalCode": "00-001",
+          "salary": 6000,
+          "status": "Employed",
+          "phoneNumber": "109-209-309"
+      },
+      {
+          "id": "10",
+          "name": "Name10",
+          "lastName": "Surname10",
+          "birthDate": "1990-11-11",
+          "street": "Street10 10",
+          "city": "Krak\u00f3w",
+          "postalCode": "31-001",
+          "salary": 4000,
+          "status": "On Leave",
+          "phoneNumber": "110-210-310"
+      },
+      {
+          "id": "11",
+          "name": "Name11",
+          "lastName": "Surname11",
+          "birthDate": "1991-12-12",
+          "street": "Street11 11",
+          "city": "Krak\u00f3w",
+          "postalCode": "31-001",
+          "salary": 4500,
+          "status": "Fired",
+          "phoneNumber": "111-211-311"
+      },
+      {
+          "id": "12",
+          "name": "Name12",
+          "lastName": "Surname12",
+          "birthDate": "1992-01-13",
+          "street": "Street12 12",
+          "city": "Krak\u00f3w",
+          "postalCode": "31-001",
+          "salary": 5000,
+          "status": "Employed",
+          "phoneNumber": "112-212-312"
+      },
+      {
+          "id": "13",
+          "name": "Name13",
+          "lastName": "Surname13",
+          "birthDate": "1993-02-14",
+          "street": "Street13 13",
+          "city": "Krak\u00f3w",
+          "postalCode": "31-001",
+          "salary": 5500,
+          "status": "On Leave",
+          "phoneNumber": "113-213-313"
+      },
+      {
+          "id": "14",
+          "name": "Name14",
+          "lastName": "Surname14",
+          "birthDate": "1994-03-15",
+          "street": "Street14 14",
+          "city": "Krak\u00f3w",
+          "postalCode": "31-001",
+          "salary": 6000,
+          "status": "Fired",
+          "phoneNumber": "114-214-314"
+      },
+      {
+          "id": "15",
+          "name": "Name15",
+          "lastName": "Surname15",
+          "birthDate": "1995-04-16",
+          "street": "Street15 15",
+          "city": "Krak\u00f3w",
+          "postalCode": "31-001",
+          "salary": 4000,
+          "status": "Employed",
+          "phoneNumber": "115-215-315"
+      },
+      {
+          "id": "16",
+          "name": "Name16",
+          "lastName": "Surname16",
+          "birthDate": "1996-05-17",
+          "street": "Street16 16",
+          "city": "Krak\u00f3w",
+          "postalCode": "31-001",
+          "salary": 4500,
+          "status": "On Leave",
+          "phoneNumber": "116-216-316"
+      },
+      {
+          "id": "17",
+          "name": "Name17",
+          "lastName": "Surname17",
+          "birthDate": "1997-06-18",
+          "street": "Street17 17",
+          "city": "Krak\u00f3w",
+          "postalCode": "31-001",
+          "salary": 5000,
+          "status": "Fired",
+          "phoneNumber": "117-217-317"
+      },
+      {
+          "id": "18",
+          "name": "Name18",
+          "lastName": "Surname18",
+          "birthDate": "1998-07-19",
+          "street": "Street18 18",
+          "city": "Krak\u00f3w",
+          "postalCode": "31-001",
+          "salary": 5500,
+          "status": "Employed",
+          "phoneNumber": "118-218-318"
+      },
+      {
+          "id": "19",
+          "name": "Name19",
+          "lastName": "Surname19",
+          "birthDate": "1999-08-20",
+          "street": "Street19 19",
+          "city": "Krak\u00f3w",
+          "postalCode": "31-001",
+          "salary": 6000,
+          "status": "On Leave",
+          "phoneNumber": "119-219-319"
+      },
+      {
+          "id": "20",
+          "name": "Name20",
+          "lastName": "Surname20",
+          "birthDate": "1980-09-21",
+          "street": "Street20 20",
+          "city": "Krak\u00f3w",
+          "postalCode": "31-001",
+          "salary": 4000,
+          "status": "Fired",
+          "phoneNumber": "120-220-320"
+      },
+      {
+          "id": "21",
+          "name": "Name21",
+          "lastName": "Surname21",
+          "birthDate": "1981-10-22",
+          "street": "Street21 21",
+          "city": "Krak\u00f3w",
+          "postalCode": "31-001",
+          "salary": 4500,
+          "status": "Employed",
+          "phoneNumber": "121-221-321"
+      },
+      {
+          "id": "22",
+          "name": "Name22",
+          "lastName": "Surname22",
+          "birthDate": "1982-11-23",
+          "street": "Street22 22",
+          "city": "Krak\u00f3w",
+          "postalCode": "31-001",
+          "salary": 5000,
+          "status": "On Leave",
+          "phoneNumber": "122-222-322"
+      },
+      {
+          "id": "23",
+          "name": "Name23",
+          "lastName": "Surname23",
+          "birthDate": "1983-12-24",
+          "street": "Street23 23",
+          "city": "Krak\u00f3w",
+          "postalCode": "31-001",
+          "salary": 5500,
+          "status": "Fired",
+          "phoneNumber": "123-223-323"
+      },
+      {
+          "id": "24",
+          "name": "Name24",
+          "lastName": "Surname24",
+          "birthDate": "1984-01-25",
+          "street": "Street24 24",
+          "city": "Krak\u00f3w",
+          "postalCode": "31-001",
+          "salary": 6000,
+          "status": "Employed",
+          "phoneNumber": "124-224-324"
+      },
+      {
+          "id": "25",
+          "name": "Name25",
+          "lastName": "Surname25",
+          "birthDate": "1985-02-26",
+          "street": "Street25 25",
+          "city": "Krak\u00f3w",
+          "postalCode": "31-001",
+          "salary": 4000,
+          "status": "On Leave",
+          "phoneNumber": "125-225-325"
+      },
+      {
+          "id": "26",
+          "name": "Name26",
+          "lastName": "Surname26",
+          "birthDate": "1986-03-27",
+          "street": "Street26 26",
+          "city": "Krak\u00f3w",
+          "postalCode": "31-001",
+          "salary": 4500,
+          "status": "Fired",
+          "phoneNumber": "126-226-326"
+      },
+      {
+          "id": "27",
+          "name": "Name27",
+          "lastName": "Surname27",
+          "birthDate": "1987-04-28",
+          "street": "Street27 27",
+          "city": "Krak\u00f3w",
+          "postalCode": "31-001",
+          "salary": 5000,
+          "status": "Employed",
+          "phoneNumber": "127-227-327"
+      },
+      {
+          "id": "28",
+          "name": "Name28",
+          "lastName": "Surname28",
+          "birthDate": "1988-05-01",
+          "street": "Street28 28",
+          "city": "Krak\u00f3w",
+          "postalCode": "31-001",
+          "salary": 5500,
+          "status": "On Leave",
+          "phoneNumber": "128-228-328"
+      },
+      {
+          "id": "29",
+          "name": "Name29",
+          "lastName": "Surname29",
+          "birthDate": "1989-06-02",
+          "street": "Street29 29",
+          "city": "Krak\u00f3w",
+          "postalCode": "31-001",
+          "salary": 6000,
+          "status": "Fired",
+          "phoneNumber": "129-229-329"
+      },
+      {
+          "id": "30",
+          "name": "Name30",
+          "lastName": "Surname30",
+          "birthDate": "1990-07-03",
+          "street": "Street30 30",
+          "city": "Krak\u00f3w",
+          "postalCode": "31-001",
+          "salary": 4000,
+          "status": "Employed",
+          "phoneNumber": "130-230-330"
+      }
   ]
 }

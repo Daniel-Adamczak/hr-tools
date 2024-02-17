@@ -1,17 +1,17 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { Header } from './shared/Header/Header';
-import { Main } from './shared/Main/Main';
 import { Footer } from './shared/Footer/Footer';
-import { BrowserRouter as Router } from 'react-router-dom';
-// trzeba ostylowac za pomocą styled components
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { EmployeeList } from './pages/EmployeeList/EmployeeList';
+
 function App() {
   return (
     <div className='App'>
       <Router>
         <Header />
-        <Main />
+        <Routes>
+          <Route path='/' element={<EmployeeList />} />
+        </Routes>
         <Footer />
       </Router>
     </div>

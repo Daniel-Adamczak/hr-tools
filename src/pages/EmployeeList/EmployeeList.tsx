@@ -14,8 +14,13 @@ export interface Employee {
   id: string;
   name: string;
   lastName: string;
+  birthDate: string;
+  street: string;
+  city: string;
+  postalCode: string;
   salary: number;
-  status: string;
+  status: 'Employed' | 'On Leave' | 'Fired';
+  phoneNumber: string;
 }
 
 export const EmployeeList: React.FC = () => {
@@ -40,18 +45,18 @@ export const EmployeeList: React.FC = () => {
 
     fetchEmployees();
   }, []);
-
-  return (
-    <Section>
-      {employees.length > 0 ? (
-        <>
-          <SearchBar />
-          <EmployeeTable employees={employees} />
-          <PaginationControl />
-        </>
-      ) : (
-        <div>No employees found</div>
-      )}
-    </Section>
-  );
+  if (employees.length > 0) {
+    return (
+      <Section>
+        <SearchBar />
+        <EmployeeTable employees={employees} />
+      </Section>
+    );
+  } else {
+    return (
+      <Section>        
+        <div>No employees found.</div>
+      </Section>
+    );
+  }
 };
