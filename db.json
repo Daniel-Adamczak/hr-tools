@@ -1,0 +1,74 @@
+{
+  "employees": [
+    {
+      "id": "1",
+      "name": "John",
+      "lastName": "Doe",
+      "salary": 50000,
+      "status": "Active"
+    },
+    {
+      "id": "2",
+      "name": "Jane",
+      "lastName": "Doe",
+      "salary": 52000,
+      "status": "Active"
+    },
+    {
+      "id": "3",
+      "name": "Jim",
+      "lastName": "Beam",
+      "salary": 55000,
+      "status": "Inactive"
+    },
+    {
+      "id": "4",
+      "name": "Jack",
+      "lastName": "Daniels",
+      "salary": 53000,
+      "status": "Active"
+    },
+    {
+      "id": "5",
+      "name": "Jose",
+      "lastName": "Cuervo",
+      "salary": 51000,
+      "status": "Active"
+    },
+    {
+      "id": "6",
+      "name": "Jin",
+      "lastName": "Bean",
+      "salary": 54000,
+      "status": "Inactive"
+    },
+    {
+      "id": "7",
+      "name": "Julie",
+      "lastName": "Smith",
+      "salary": 57000,
+      "status": "Active"
+    },
+    {
+      "id": "8",
+      "name": "Jason",
+      "lastName": "Bourne",
+      "salary": 56000,
+      "status": "Active"
+    },
+    {
+      "id": "9",
+      "name": "Jasper",
+      "lastName": "Carrott",
+      "salary": 58000,
+      "status": "Inactive"
+    },
+    {
+      "id": "10",
+      "name": "Jill",
+      "lastName": "Valentine",
+      "salary": 59000,
+      "status": "Active"
+    }
+  ]
+}
