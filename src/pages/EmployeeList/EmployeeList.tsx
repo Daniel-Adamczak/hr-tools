@@ -45,18 +45,11 @@ export const EmployeeList: React.FC = () => {
 
     fetchEmployees();
   }, []);
-  if (employees.length > 0) {
-    return (
-      <Section>
-        <SearchBar />
-        <EmployeeTable employees={employees} />
-      </Section>
-    );
-  } else {
-    return (
-      <Section>        
-        <div>No employees found.</div>
-      </Section>
-    );
-  }
+  const sectionContents =  employees.length > 0 ? [<SearchBar />, <EmployeeTable employees={employees} />] : <div>No employees found.</div>  
+
+    return (  
+      <Section>  
+        {sectionContents}  
+      </Section>  )
+
 };
