@@ -1,13 +1,28 @@
-import React from 'react';
-import { Navbar } from './components/Navbar';
 import { LanguageSwitcher } from './components/LanguageSwitcher';
-// do ostylowania za pomocą Styled Components
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+
+const StyledLink = styled(Link)`
+text-decoration: none;
+margin:auto;
+&:hover {
+  color:red;
+}
+`
+const HeaderContainer= styled.header`
+display:flex;
+flex-direction:row;
+
+`
+
 export const Header = () => {
   return (
-    <header>
-      <h1>Hr Tools</h1>
-      <Navbar />
-      <LanguageSwitcher />
-    </header>
+    <HeaderContainer>
+      <StyledLink to='/'>
+        <h1>Hr Tools</h1>
+      </StyledLink>
+
+      {/* <LanguageSwitcher /> */}
+    </HeaderContainer>
   );
 };

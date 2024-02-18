@@ -13,6 +13,9 @@ const Th = styled.th`
   color: white;
   text-align: left;
   padding: 10px;
+  &:last-child {
+    text-align: center;
+  }
 `;
 
 const Td = styled.td`
@@ -44,11 +47,15 @@ export const EmployeeTable: React.FC<EmployeeTableProps> = ({ employees }) => {
 
   return (
     <Table>
-      <Th>ID</Th>
-      <Th>Imię</Th>
-      <Th>Nazwisko</Th>
-      <Th>Pensja</Th>
-      <Th>Status</Th>
+      <thead><tr><Th>ID</Th>
+        <Th>First name</Th>
+        <Th>Last name</Th>
+        <Th>Salary</Th>
+        <Th>Status</Th>
+        <Th>Details</Th></tr>
+        
+      </thead>
+
       <tbody>{employeesTableContent}</tbody>
     </Table>
   );

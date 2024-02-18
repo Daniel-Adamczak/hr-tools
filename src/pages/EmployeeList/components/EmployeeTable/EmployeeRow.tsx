@@ -2,6 +2,7 @@
 import React from 'react';
 import { Employee } from '../../EmployeeList';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const Tr = styled.tr`
   background-color: #009879;
@@ -11,10 +12,14 @@ const Tr = styled.tr`
   &:nth-child(odd) {
     background-color: #22ba9a;
   }
+  
 `;
 const Td = styled.td`
   padding: 8px;
   border-bottom: 1px solid #ddd;
+  &:last-child {
+    text-align:center;
+  }
 `;
 
 interface EmployeeRowProps {
@@ -29,6 +34,7 @@ export const EmployeeRow: React.FC<EmployeeRowProps> = ({ employee }) => {
       <Td>{employee.lastName}</Td>
       <Td>{employee.salary}</Td>
       <Td>{employee.status}</Td>
+      <Td><Link to={`/${employee.id}`} >Show</Link></Td>
     </Tr>
   );
 };
