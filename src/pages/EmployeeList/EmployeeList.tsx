@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { SearchBar } from './components/SearchBar';
-import { EmployeeTable } from './components/EmployeeTable';
+import { EmployeesTable } from './components/EmployeesTable';
 import { PaginationControl } from './components/PaginationControl';
 
 import styled from 'styled-components';
@@ -45,11 +45,20 @@ export const EmployeeList: React.FC = () => {
 
     fetchEmployees();
   }, []);
-  const sectionContents =  employees.length > 0 ? [<SearchBar />, <EmployeeTable employees={employees} />] : <div>No employees found.</div>  
+  let sectionContents:React.ReactNode;
+  if(employees.length>0){
+   sectionContents =    
+      [<SearchBar />, <EmployeesTable employees={employees} />]      
+    }
+    else if(employees.length===0){
+       sectionContents =   
+      <div>No employees found.</div>    
+    }
+    else if(error)
+    {
+       sectionContents =   
+      <div>There was an error fetching employees data: {error}</div>    
+    }
 
-    return (  
-      <Section>  
-        {sectionContents}  
-      </Section>  )
-
+  return <Section>{sectionContents}</Section>;
 };
