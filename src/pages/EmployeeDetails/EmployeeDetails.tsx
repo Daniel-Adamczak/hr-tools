@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { Input } from '../../shared/UI-components/Input';
+import { LabeledInput } from '../../shared/UI-components/LabeledInput';
 import { useParams } from 'react-router-dom';
 
 const Section = styled.section`
@@ -49,32 +49,32 @@ export const EmployeeDetails: React.FC = () => {
     };
 
     fetchEmployee();
-  }, [id]);
-
+  }, []);
+  let employeeDetailsContent: React.ReactNode;
   if (employeeData) {
     const labeledEmployeeInputs = Object.keys(employeeData).map((key) => {
       return (
-        <Input
-          title={key}
+        <LabeledInput
+          key={key}
+          label={key}
           value={employeeData[key as keyof Employee]}
-          isReadOnly={false}
+          isReadOnly={true}
         />
       );
     });
-    return (
-      <Section>
-        <EmployeeDetailsContainer>
-          {labeledEmployeeInputs}
-        </EmployeeDetailsContainer>
-      </Section>
+    employeeDetailsContent = labeledEmployeeInputs;
+  } else if (error) {
+    employeeDetailsContent = (
+      <div>There was an error while fetching employee data: {error}</div>
     );
   } else {
-    return (
-      <Section>
-        <EmployeeDetailsContainer>
-          <div>Loading data</div>
-        </EmployeeDetailsContainer>
-      </Section>
-    );
+    employeeDetailsContent = <div>Loading data...</div>;
   }
+  return (
+    <Section>
+      <EmployeeDetailsContainer>
+        {employeeDetailsContent}
+      </EmployeeDetailsContainer>
+    </Section>
+  );
 };

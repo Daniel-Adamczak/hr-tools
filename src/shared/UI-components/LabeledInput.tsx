@@ -6,7 +6,7 @@ const Label = styled.label`
   gap: 5px;
   display: flex;
   margin: auto;
-  border-bottom:2px solid
+  border-bottom: 2px solid;
 `;
 const Span = styled.span`
   padding: 10px;
@@ -16,21 +16,21 @@ const Span = styled.span`
 `;
 
 interface InputProps {
-  title: string;
+  label: string;
   value: string | number;
   isReadOnly: boolean;
   onChange?: () => string;
 }
 
-export const Input: React.FC<InputProps> = ({
-  title,
+export const LabeledInput: React.FC<InputProps> = ({
+  label,
   value,
   isReadOnly,
   onChange,
 }) => {
   return (
     <Label htmlFor=''>
-      <Span>{title}</Span>
+      <Span>{label}</Span>
       <input
         type='text'
         value={value}
