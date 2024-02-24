@@ -51,7 +51,6 @@ export const EmployeeDetails: React.FC = () => {
     fetchEmployee();
   }, [id]);
 
-  console.log(employeeData);
   if (employeeData) {
     const labeledEmployeeInputs = Object.keys(employeeData).map((key) => {
       return (
