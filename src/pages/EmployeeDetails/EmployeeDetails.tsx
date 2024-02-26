@@ -55,7 +55,7 @@ export const EmployeeDetails: React.FC = () => {
     const labeledEmployeeInputs = Object.keys(employeeData).map((key) => {
       return (
         <LabeledInput
-          key={key}
+          type='text'
           label={key}
           value={employeeData[key as keyof Employee]}
           isReadOnly={true}
