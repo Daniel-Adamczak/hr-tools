@@ -6,20 +6,24 @@ const Label = styled.label`
   gap: 5px;
   display: flex;
   margin: auto;
-  border-bottom: 2px solid;
+ 
 `;
 const Span = styled.span`
   padding: 10px;
   gap: 5px;
   display: flex;
-  width: 150px;
+  min-width: 100px;
 `;
 
 interface InputProps {
   label: string;
-  value: string | number;
-  isReadOnly: boolean;
-  onChange?: () => string;
+  value?: string | number;
+  isReadOnly?: boolean;
+  onChange?: (event?: React.ChangeEvent<HTMLInputElement>) => void;
+  type:'text'|'checkbox';
+  checked?:boolean;
+  onClick?: (event?: React.MouseEvent<HTMLInputElement>) => void;
+  name?:string;
 }
 
 export const LabeledInput: React.FC<InputProps> = ({
@@ -27,15 +31,22 @@ export const LabeledInput: React.FC<InputProps> = ({
   value,
   isReadOnly,
   onChange,
+  type,
+  checked,
+  onClick,
+  name
 }) => {
   return (
-    <Label htmlFor=''>
+    <Label >
       <Span>{label}</Span>
       <input
-        type='text'
+        type={type}
         value={value}
         readOnly={isReadOnly}
         onChange={onChange}
+        checked={checked}
+        onClick={onClick}
+        name={name}
       />
     </Label>
   );
