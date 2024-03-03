@@ -82,7 +82,7 @@ export const EmployeeList: React.FC = () => {
 
   let sectionContents: React.ReactNode;
   if (employeesToDisplay.length > 0) {
-    sectionContents = <EmployeesTable employees={employeesToDisplay} />;
+    sectionContents = <EmployeesTable employees={employeesToDisplay} setEmployeesToDisplay={setEmployeesToDisplay}/>;
   } else if (employeesToDisplay.length === 0) {
     sectionContents = <div>No employees found.</div>;
   } else if (error) {
