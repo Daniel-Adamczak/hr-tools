@@ -3,10 +3,26 @@ import { SearchBar } from './components/SearchBar';
 import { EmployeesTable } from './components/EmployeesTable';
 
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const Section = styled.section`
   padding: 20px;
+  width: 90%;
   background-color: #f0f0f0;
+  display:flex;
+  flex-direction:column;
+  margin:auto;
+  
+`;
+const AddNewEmployeeLink= styled(Link)`
+  
+  padding: 10px;
+  text-decoration: none;
+
+  &:hover {
+    color: #3bff37b;
+    text-shadow:0px 0px 15px;
+  }
 `;
 
 export interface Employee {
@@ -18,7 +34,7 @@ export interface Employee {
   city: string;
   postalCode: string;
   salary: number;
-  status: 'Employed' | 'On Leave' | 'Fired';
+  status: string;
   phoneNumber: string;
 }
 interface queryParameterType {
@@ -32,6 +48,7 @@ export const EmployeeList: React.FC = () => {
   const [employees, setEmployees] = useState<Employee[]>([]);
   const [employeesToDisplay, setEmployeesToDisplay] = useState<Employee[]>([]);
   const [error, setError] = useState<string | null>(null);
+  const [ifShowAddForm,setIfShowAddForm]=useState<boolean>(false);
   const [queryParameter, setQueryParameter] = useState<queryParameterType>({
     name: false,
     lastName: false,
@@ -82,7 +99,12 @@ export const EmployeeList: React.FC = () => {
 
   let sectionContents: React.ReactNode;
   if (employeesToDisplay.length > 0) {
-    sectionContents = <EmployeesTable employees={employeesToDisplay} setEmployeesToDisplay={setEmployeesToDisplay}/>;
+    sectionContents = (
+      <EmployeesTable
+        employees={employeesToDisplay}
+        setEmployeesToDisplay={setEmployeesToDisplay}
+      />
+    );
   } else if (employeesToDisplay.length === 0) {
     sectionContents = <div>No employees found.</div>;
   } else if (error) {
@@ -93,6 +115,8 @@ export const EmployeeList: React.FC = () => {
 
   return (
     <Section>
+      <AddNewEmployeeLink to='/add-new-employee'>+ Add Employee</AddNewEmployeeLink>
+
       {[
         <SearchBar
           searchQuery={searchQuery}

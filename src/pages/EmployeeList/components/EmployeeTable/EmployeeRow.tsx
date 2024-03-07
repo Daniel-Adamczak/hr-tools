@@ -6,20 +6,19 @@ import { Link } from 'react-router-dom';
 
 const Tr = styled.tr`
   background-color: #009879;
-  color: white;
-  text-align: left;
-  padding: 10px;
+  color:#ececec;
+  font-weight:semibold;
+ max-width:90vw;
+ margin:auto;
+  padding: 5px;
   &:nth-child(odd) {
     background-color: #22ba9a;
   }
-  
 `;
 const Td = styled.td`
-  padding: 8px;
+  padding: 5px;
   border-bottom: 1px solid #ddd;
-  &:last-child {
-    text-align:center;
-  }
+  text-align: center;
 `;
 
 interface EmployeeRowProps {
@@ -29,12 +28,15 @@ interface EmployeeRowProps {
 export const EmployeeRow: React.FC<EmployeeRowProps> = ({ employee }) => {
   return (
     <Tr>
-      <Td>{employee.id}</Td>
+      
       <Td>{employee.name}</Td>
       <Td>{employee.lastName}</Td>
-      <Td>{employee.salary}</Td>
-      <Td>{employee.status}</Td>
-      <Td><Link to={`/${employee.id}`} >Show</Link></Td>
+      {window.innerWidth>=600 &&[<Td>{employee.salary}</Td>,
+      <Td>{employee.status}</Td>,
+      <Td>{employee.id}</Td>]}
+      <Td>
+        <Link to={`/${employee.id}`}>Show</Link>
+      </Td>
     </Tr>
   );
 };

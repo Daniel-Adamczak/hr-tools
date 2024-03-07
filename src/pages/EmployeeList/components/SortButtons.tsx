@@ -9,7 +9,7 @@ const SortBtn = styled.button`
   font-weight: bold;
   background: inherit;
   &:hover {
-    text-shadow: 0px 0px 5px;
+    text-shadow: 0px 0px 15px;
     color: #55bb55;
     transform: scale(1.3);
   }
@@ -23,7 +23,7 @@ interface Employee {
   city: string;
   postalCode: string;
   salary: number;
-  status: 'Employed' | 'On Leave' | 'Fired';
+  status: string;
   phoneNumber: string;
 }
 
@@ -51,9 +51,9 @@ export const SortButtons: React.FC<SortButtonsProps> = ({
     setEmployeesToDisplay(sortedEmployees);
   };
   return (
-    <>
+    <div>
       <SortBtn onClick={() => HandleSortEmployees(true)}>↑</SortBtn>
       <SortBtn onClick={() => HandleSortEmployees(false)}>↓</SortBtn>
-    </>
+    </div>
   );
 };

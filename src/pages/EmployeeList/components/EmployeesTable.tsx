@@ -7,19 +7,23 @@ const Table = styled.table`
   width: 100%;
   border-collapse: collapse;
   border: 2px solid gray;
+  
 `;
 
 const Th = styled.th`
   background-color: #006999;
   color: white;
-  text-align: left;
+  text-align: center;
   padding: 10px;
+  
   &:last-child {
     text-align: center;
   }
 `;
 
 const Td = styled.td`
+display:flex;
+  flex-direction:${window.innerWidth>=600 ? 'row':'column'}
   padding: 8px;
   border-bottom: 1px solid #ddd;
 `;
@@ -33,33 +37,68 @@ interface Employee {
   city: string;
   postalCode: string;
   salary: number;
-  status: 'Employed' | 'On Leave' | 'Fired';
+  status: string;
   phoneNumber: string;
 }
 
 interface EmployeeTableProps {
   employees: Employee[];
-  setEmployeesToDisplay:(value: Employee[]) => void;
+  setEmployeesToDisplay: (value: Employee[]) => void;
 }
 
-export const EmployeesTable: React.FC<EmployeeTableProps> = ({ employees,setEmployeesToDisplay }) => {
+export const EmployeesTable: React.FC<EmployeeTableProps> = ({
+  employees,
+  setEmployeesToDisplay,
+}) => {
   const employeesTableContent = employees.map((employee) => (
     <EmployeeRow key={employee.id} employee={employee} />
   ));
-
- 
 
   return (
     <Table>
       <thead>
         <tr>
+         
           <Th>
-            ID <SortButtons employees={employees} setEmployeesToDisplay={setEmployeesToDisplay} sortBy='id'/>
+            First name
+            <SortButtons
+              employees={employees}
+              setEmployeesToDisplay={setEmployeesToDisplay}
+              sortBy='name'
+            />
           </Th>
-          <Th>First name <SortButtons employees={employees} setEmployeesToDisplay={setEmployeesToDisplay} sortBy='name'/></Th>
-          <Th>Last name <SortButtons employees={employees} setEmployeesToDisplay={setEmployeesToDisplay} sortBy='lastName'/></Th>
-          <Th>Salary <SortButtons employees={employees} setEmployeesToDisplay={setEmployeesToDisplay} sortBy='salary'/></Th>
-          <Th>Status <SortButtons employees={employees} setEmployeesToDisplay={setEmployeesToDisplay} sortBy='status'/></Th>
+          <Th>
+            Last name
+            <SortButtons
+              employees={employees}
+              setEmployeesToDisplay={setEmployeesToDisplay}
+              sortBy='lastName'
+            />
+          </Th>
+          {window.innerWidth>=600&&[<Th>
+            Salary
+            <SortButtons
+              employees={employees}
+              setEmployeesToDisplay={setEmployeesToDisplay}
+              sortBy='salary'
+            />
+          </Th>,
+          <Th>
+            Status
+            <SortButtons
+              employees={employees}
+              setEmployeesToDisplay={setEmployeesToDisplay}
+              sortBy='status'
+            />
+          </Th>,
+          <Th>
+            ID
+            <SortButtons
+              employees={employees}
+              setEmployeesToDisplay={setEmployeesToDisplay}
+              sortBy='id'
+            />
+          </Th>]}
           <Th>Details</Th>
         </tr>
       </thead>
