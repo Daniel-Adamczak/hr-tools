@@ -1,18 +1,25 @@
 import styled from 'styled-components';
 import { LabeledInput } from '../../../shared/UI-components/LabeledInput';
-import {  useState } from 'react';
+import { useState } from 'react';
 
 const SearchWrapper = styled.div`
-  margin-bottom: 20px;
   display: flex;
-  width: fit-content;
+  ${window.innerWidth<=600 ?'flex-direction:column':'flex-direction:row'}
+  justify-content: space-around;
 `;
 
 const SearchInput = styled.input`
   padding: 10px;
   width: 100%;
   box-sizing: border-box;
+  
 `;
+const SearchFiltersTitle = styled.div`
+
+  width: 100%;
+  box-sizing: border-box;
+`;
+
 interface queryParameterType {
   name: boolean;
   lastName: boolean;
@@ -22,17 +29,14 @@ interface SearchBarType {
   searchQuery: string;
   setSearchQuery: (value: string) => void;
   queryParameter: queryParameterType;
-  setQueryParameter: (value:queryParameterType)=>void;
-
+  setQueryParameter: (value: queryParameterType) => void;
 }
 export const SearchBar: React.FC<SearchBarType> = ({
   searchQuery,
   setSearchQuery,
   queryParameter,
-  setQueryParameter
+  setQueryParameter,
 }) => {
-  
-
   const queryParameterChangeHandler = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
@@ -44,12 +48,7 @@ export const SearchBar: React.FC<SearchBarType> = ({
 
   return (
     <>
-      <SearchInput
-        placeholder='Search...'
-        value={searchQuery}
-        onChange={(event) => setSearchQuery(event.target.value)}
-      />
-      <span>Search by:</span>
+      <SearchFiltersTitle>Search by:</SearchFiltersTitle>
       <SearchWrapper>
         <LabeledInput
           label='First Name'
@@ -85,6 +84,11 @@ export const SearchBar: React.FC<SearchBarType> = ({
           }
         />
       </SearchWrapper>
+      <SearchInput
+        placeholder='Search...'
+        value={searchQuery}
+        onChange={(event) => setSearchQuery(event.target.value)}
+      />
     </>
   );
 };

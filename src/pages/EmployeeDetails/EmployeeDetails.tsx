@@ -23,7 +23,7 @@ export interface Employee {
   city: string;
   postalCode: string;
   salary: number;
-  status: 'Employed' | 'On Leave' | 'Fired';
+  status: string;
   phoneNumber: string;
 }
 
